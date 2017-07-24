@@ -1,0 +1,133 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular4-json-schema-view@^1.0.2",
+        "scope": null,
+        "escapedName": "angular4-json-schema-view",
+        "name": "angular4-json-schema-view",
+        "rawSpec": "^1.0.2",
+        "spec": ">=1.0.2 <2.0.0",
+        "type": "range"
+      },
+      "C:\\Users\\Max\\ang4\\Test"
+    ]
+  ],
+  "_from": "angular4-json-schema-view@>=1.0.2 <2.0.0",
+  "_id": "angular4-json-schema-view@1.0.2",
+  "_inCache": true,
+  "_location": "/angular4-json-schema-view",
+  "_nodeVersion": "6.11.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular4-json-schema-view-1.0.2.tgz_1497783024572_0.06526108435355127"
+  },
+  "_npmUser": {
+    "name": "freest10",
+    "email": "powerandfit@yandex.ru"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {
+    "symbol-observable": "1.0.4"
+  },
+  "_requested": {
+    "raw": "angular4-json-schema-view@^1.0.2",
+    "scope": null,
+    "escapedName": "angular4-json-schema-view",
+    "name": "angular4-json-schema-view",
+    "rawSpec": "^1.0.2",
+    "spec": ">=1.0.2 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular4-json-schema-view/-/angular4-json-schema-view-1.0.2.tgz",
+  "_shasum": "7b492688a8552ebb9b7757f30e6dbfb886ca38c4",
+  "_shrinkwrap": null,
+  "_spec": "angular4-json-schema-view@^1.0.2",
+  "_where": "C:\\Users\\Max\\ang4\\Test",
+  "author": {
+    "name": "Freest10"
+  },
+  "bugs": {
+    "url": "https://github.com/Freest10/angular4-json-schema-view/issues"
+  },
+  "dependencies": {
+	"hammerjs": "2.x",
+    "@angular/animations": ">=2.0.0 <5.0.0",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/material": "^2.0.0-beta.8",
+	"@angular/cdk": "^2.0.0-beta.8",
+    "@angular/platform-server": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "core-js": "^2.4.1",
+    "ie-shim": "^0.1.0",
+    "reflect-metadata": "^0.1.10"    
+  },
+  "description": "",
+  "devDependencies": {
+    "@angular/language-service": "^4.0.0",
+    "@types/jasmine": "2.5.45",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~3.0.1",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.1.2",
+    "ts-node": "~3.0.4",
+    "tslint": "~5.3.2",
+    "typescript": "~2.3.3",
+	"rxjs": "~5.0.2",
+    "zone.js": "0.8.5"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "7b492688a8552ebb9b7757f30e6dbfb886ca38c4",
+    "tarball": "https://registry.npmjs.org/angular4-json-schema-view/-/angular4-json-schema-view-1.0.2.tgz"
+  },
+  "homepage": "https://github.com/Freest10/angular4-json-schema-view#readme",
+  "keywords": [
+    "json-schema",
+	"Angular",
+    "ng2",
+    "Angular2",
+    "Angular 2",
+    "ng4",
+    "Angular4",
+    "Angular 4",
+    "JSON Schema",
+    "form",
+    "forms",
+    "form builder"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "freest10",
+      "email": "powerandfit@yandex.ru"
+    }
+  ],
+  "name": "angular4-json-schema-view",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Freest10/angular4-json-schema-view.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0-alpha.9"
+}
