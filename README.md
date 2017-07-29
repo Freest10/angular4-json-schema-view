@@ -29,7 +29,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: '
+  template: `
        <json-schema-view
        [form]='yourJsonSchema'
        [model]='yourModel'
@@ -38,7 +38,7 @@ import { Component, OnInit } from '@angular/core';
        (onChanges)='yourChangeFn($event)'
        (onSubmit)='yourOnSubmitFn($event)'
        >
-  </json-schema-view>'
+  </json-schema-view>`
 })
 ```
 
