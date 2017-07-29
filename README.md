@@ -6,6 +6,7 @@ npm install angular4-json-schema-view --save-dev
 ```
 
 <h3>Add to your module</h3>
+
 ```
 import { NgModule }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
@@ -24,20 +25,4 @@ export class AppModule { }
 
 <h3>Add to your component</h3>
 
-```
-import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  template: '
-       <json-schema-view
-       [form]="yourJsonSchema"
-       [model]="yourModel"
-       [frameWorkName]="yourFrameWorkName"
-       (inctanceOfWidgets)="yourIncstanceOfWidgetsFn($event)"
-       (onChanges)="yourChangeFn($event)"
-       (onSubmit)="yourOnSubmitFn($event)"
-       >
-  </json-schema-view>'
-})
-```
