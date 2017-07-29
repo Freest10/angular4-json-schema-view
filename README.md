@@ -1,10 +1,12 @@
 # angular4-json-schema-view
 
 To install from NPM and use in your own project
+```
 npm install angular4-json-schema-view --save-dev
+```
 
 <h3>Add to your module</h3>
-
+```
 import { NgModule }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
 
@@ -18,9 +20,10 @@ import { AppComponent }         from './app.component';
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
+```
 
 <h3>Add to your component</h3>
-
+```
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -36,3 +39,4 @@ import { Component, OnInit } from '@angular/core';
        >
   </json-schema-view>`
 })
+```
