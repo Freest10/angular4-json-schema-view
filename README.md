@@ -45,5 +45,5 @@ import { Component, OnInit } from '@angular/core';
 })
 ```
 
-The reason of this module, because there are two angular2 json-schema modules and a detailed instruction coming soon.
+There are two similar modules besides my. The detailed instruction of my module as well as the explanation of it will be produced soon.
 
