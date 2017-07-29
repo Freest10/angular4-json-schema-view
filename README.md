@@ -23,6 +23,7 @@ export class AppModule { }
 ```
 
 <h3>Add to your component</h3>
+
 ```
 import { Component, OnInit } from '@angular/core';
 
