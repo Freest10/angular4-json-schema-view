@@ -6,22 +6,21 @@ import { RequestsDataService } from '../share/requests-data.service';
 @Component({
   selector: 'material-list-widget',
   template: `
-    <h3 md-subheader>{{options?.title}}</h3>
-    <ng-container *ngIf="selectList">
-      <md-list *ngFor="let list of selectList">
-        <md-list-item
-          (click)="selectData(list)"
-        >
-          <md-icon md-list-icon *ngIf="list.icon">{{list.icon}}</md-icon>
-          <p md-line> {{list.name}}</p>
-        </md-list-item>
-      </md-list>
-    <ng-container>
-    <ng-container *ngIf="formControl.errors && jsf.submited" class="alert alert-danger">
-      <div *ngIf="formControl.errors.required">
-        {{options?.validateMessages?.required}}
-      </div>
-    </ng-container>
+    <div
+      [class]="options?.htmlClass">
+      <h3 md-subheader>{{options?.title}}</h3>
+      <ng-container *ngIf="selectList">
+        <md-list *ngFor="let list of selectList">
+          <md-list-item
+            (click)="selectData(list)"
+          >
+            <md-icon md-list-icon *ngIf="list.icon">{{list.icon}}</md-icon>
+            <p md-line> {{list.name}}</p>
+          </md-list-item>
+        </md-list>
+      <error-messages-widget [control]="this"></error-messages-widget>
+      </ng-container>
+    </div>
   `
 })
 export class MaterialListComponent implements OnInit {

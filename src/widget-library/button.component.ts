@@ -22,17 +22,9 @@ import { JsonSchemaFormService } from '../json-schema-form.service';
   `
 })
 export class ButtonComponent implements OnInit {
-  /*formControl: AbstractControl;
+  formControl: AbstractControl;
   controlName: string;
-  controlValue: any;
   controlDisabled: boolean = false;
-  boundControl: boolean = false;
-  options: any;
-  @Input() formID: number;
-  @Input() layoutNode: any;
-  @Input() layoutIndex: number[];
-  @Input() dataIndex: number[];*/
-  controlName: string;
   options: any;
   @Input() layoutNode: any;
   public funcOnClick: any;
@@ -42,31 +34,11 @@ export class ButtonComponent implements OnInit {
     private jsf: JsonSchemaFormService
   ) { }
 
+  ngOnInit() {
+    this.options = this.layoutNode.options;
+  }
+
   clickOnButton(){
     this.widgetSubject.next('buttonClick');
-  }
-
-
-  ngOnInit() {
-    console.log(this, 'layoutNode');
-    this.options = this.layoutNode.options;
-   // this.jsf.initializeControl(this);
-  }
-
-  //buttonClick(){
-    /*return new Observable(observer => {
-      observer.next(42);
-      observer.complete();
-    })*/
-    //if(typeof this.funcOnClick == 'function') this.funcOnClick();
-    //console.log(Observable, 'Observable Input');
-  //}
-
-  updateValue(event) {
-    /*if (typeof this.options.onClick === 'function') {
-      this.options.onClick(event);
-    } else {
-      this.jsf.updateValue(this, event.target.value);
-    }*/
   }
 }

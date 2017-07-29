@@ -6,18 +6,21 @@ import { RequestsDataService } from '../share/requests-data.service';
 @Component({
   selector: 'list-widget',
   template: `
-    <h3>{{options?.title}}</h3>
-    <ng-container *ngIf="selectList">
-    <ul *ngFor="let list of selectList">
-      <li
-        (click)="selectData(list)"
-      >
-        <span *ngIf="list.icon">{{list.icon}}</span>
-        <p> {{list.name}}</p>
-      </li>
-    </ul>
-    <ng-container>
-    <error-messages-widget [control]="this"></error-messages-widget>
+    <div
+      [class]="options?.htmlClass">
+      <h3>{{options?.title}}</h3>
+      <ng-container *ngIf="selectList">
+        <ul *ngFor="let list of selectList">
+          <li
+            (click)="selectData(list)"
+          >
+            <span *ngIf="list.icon">{{list.icon}}</span>
+            <p> {{list.name}}</p>
+          </li>
+        </ul>
+      </ng-container>
+      <error-messages-widget [control]="this"></error-messages-widget>
+    </div>
   `
 })
 export class ListComponent implements OnInit {

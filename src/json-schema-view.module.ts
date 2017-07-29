@@ -9,7 +9,6 @@ import { JsonSchemaShareOptionsService }    from './share/json-schema-share-opti
 import { RequestsDataService }              from './share/requests-data.service';
 import { ModelOfSchemaService }             from './share/model-of-schema.component';
 
-
 @NgModule({
     imports: [
         CommonModule, FormsModule, WidgetLibraryModule

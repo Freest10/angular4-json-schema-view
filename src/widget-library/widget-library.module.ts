@@ -9,7 +9,6 @@ import { MATERIAL_WIDGETS }                 from '../material-design-framework';
 //import { FlexLayoutModule }                 from '@angular/flex-layout';
 import { ShareWidgetMethodsService }        from '../share/share-widgets-methods.service';
 
-
 import { HttpModule }                       from '@angular/http';
 
 import {

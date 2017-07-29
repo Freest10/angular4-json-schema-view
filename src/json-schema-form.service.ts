@@ -22,6 +22,7 @@ export class JsonSchemaFormService {
   layout: any;
   private layoutToValidate: any;
   private fullModel: any;
+  filteredData: any;
   submited: boolean = false;
   schemaOptions: Object = {
     "defaultWidget": "string"
@@ -29,6 +30,10 @@ export class JsonSchemaFormService {
   shareSchemaOptions: Object = { }
 
   constructor(private modelOfSchemaService: ModelOfSchemaService){
+    this.resetFormGroup();
+  }
+
+  resetFormGroup(){
     this.formGroup = new FormGroup({});
     this.formGroup.valueChanges.subscribe(v => {
       if(this.formGroup.valid){
@@ -59,18 +64,68 @@ export class JsonSchemaFormService {
   }
 
   filterData(data){
-    let filteredData = {};
+    this.filteredData = {};
+    this.filteringObjectData(data);
+    return this.filteredData;
+  }
+
+  private filteringArrayData(data, name, resultObject?){
+    if(data.length > 0){
+
+      let resultArr;
+      if(resultObject){
+        resultObject[name] = [];
+        resultArr = resultObject[name];
+      }else{
+        this.filteredData[name] = [];
+        resultArr = this.filteredData[name];
+      }
+
+      data.forEach((item)=>{
+        let clearedObject = this.clearObjectValue(item);
+        if(clearedObject) resultArr.push(clearedObject);
+      })
+    }
+  }
+
+  clearObjectValue(object){
+    let resultObject = {};
+    for(let item in object){
+      if(this.schemaPropList[item]){
+        if(!this.schemaPropList[item]["notSubmit"]){
+            let value = object[item];
+            if(this.isNoEmptyValueForJsonSchema(value) ||
+              (!this.isNoEmptyValueForJsonSchema(value) && !this.isNoEmptyValueForJsonSchema(this.fullModel[item]) && this.fullModel.hasOwnProperty(item))
+            ){
+               resultObject[item] = object[item];
+            }
+          }
+      }
+    }
+    if(JSON.stringify(resultObject) !== "{}") return resultObject;
+  }
+
+  private filteringObjectData(data, type?, resultObject?){
     for(let item in data){
       if(this.schemaPropList[item]){
         if(!this.schemaPropList[item]["notSubmit"]){
-          let value = data[item];
-          if(this.isNoEmptyValueForJsonSchema(value) || (!this.isNoEmptyValueForJsonSchema(value) && !this.isNoEmptyValueForJsonSchema(this.fullModel[item]))){
-            filteredData[item] = data[item];
+          if(data[item] instanceof Array){
+            this.filteringArrayData(data[item],item, resultObject);
+          }else{
+            let value = data[item];
+            if(this.isNoEmptyValueForJsonSchema(value) ||
+              (!this.isNoEmptyValueForJsonSchema(value) && !this.isNoEmptyValueForJsonSchema(this.fullModel[item]) && this.fullModel.hasOwnProperty(item))
+            ){
+              if(resultObject){
+                resultObject[item] = data[item];
+              }else{
+                this.filteredData[item] = data[item];
+              }
+            }
           }
         }
       }
     }
-    return filteredData;
   }
 
   resetValidData(){
@@ -115,7 +170,8 @@ export class JsonSchemaFormService {
     if(this.widgetLibrary.frameworkWidgets.hasOwnProperty(name)){
       this.activeFramework = name;
     }else{
-      console.error("There is no framework");
+      this.activeFramework = "none";
+      //console.error("There is no framework");
     }
   }
 
@@ -291,7 +347,6 @@ export class JsonSchemaFormService {
             if(this.schemaPropList[key] && item["type"] == "tabarray" && this.schemaPropList[key]["items"]){
 
               let wrapLayotArray = this.wrapToLayoutTabArr(item, key, "tabs", "tab");
-              console.log(wrapLayotArray, 'wrapLayotArray');
               this.createArrTypeFormGroup(item);
               let formArr = this.getFormArrByName(item["key"]);
               formGroupForArrayWidgets = this.pushFormGroupToFormArrAndReturnIt(formArr);
@@ -344,7 +399,7 @@ export class JsonSchemaFormService {
     this.widgetLibrary = Object.create(widgetLibrary);
   }
 
-  initWidget(instanceOfWidget, item){ console.log(this.instanceOfWidgets, 'this.instanceOfWidgetsService');
+  initWidget(instanceOfWidget, item){
     this.setInstanceOfWidgets(instanceOfWidget, item);
   }
 

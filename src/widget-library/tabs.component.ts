@@ -61,7 +61,7 @@ export class TabsComponent implements OnInit {
   }
 
   updateControl() {
-    if (this.layoutNode.items.length >= this.options.maxItems) { console.log("showAddTab");
+    if (this.layoutNode.items.length >= this.options.maxItems) {
       this.showAddTab = false;
     }
   }

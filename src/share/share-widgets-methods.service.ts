@@ -8,8 +8,13 @@ export class ShareWidgetMethodsService {
       let resultSelectList = [];
       let enums = widgetInstance.options.enum;
       let titleMap = widgetInstance.options.titleMap;
+      let firstEmpty = widgetInstance.options.noEmptyOption;
+      if(typeof noFirstEmpty == "boolean"){
+        firstEmpty = noFirstEmpty;
+      }
 
-      if(!noFirstEmpty){
+
+      if(!firstEmpty){
         let selectList = {};
         selectList["text"] = "";
         selectList["value"] = null;

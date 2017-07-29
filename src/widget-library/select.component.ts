@@ -22,14 +22,8 @@ import { ShareWidgetMethodsService }    from '../share/share-widgets-methods.ser
         [disabled]="controlDisabled"
         [name]="controlName"
         (input)="updateValue($event)">
-        <ng-container *ngIf="selectList.length">
-           <option *ngFor="let selectItem of selectList"
-           [value]="selectItem.value"
-           [attr.emptyOption] = "selectItem.value === null"
-           [selected]="isSelected(selectItem)">{{selectItem.text}}</option>
-        </ng-container>
+        <error-messages-widget [control]="this"></error-messages-widget>
       </select>
-      <error-messages-widget [control]="this"></error-messages-widget>
     </div>`,
 })
 export class SelectComponent implements OnInit {

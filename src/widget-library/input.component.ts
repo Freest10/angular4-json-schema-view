@@ -33,8 +33,8 @@ import { JsonSchemaFormService } from '../json-schema-form.service';
         <option *ngFor="let word of options?.typeahead?.source"
                 [value]="word">
       </datalist>
+      <error-messages-widget [control]="this"></error-messages-widget>
     </div>
-    <error-messages-widget [control]="this"></error-messages-widget>
   `,
 })
 export class InputComponent implements OnInit {
@@ -52,7 +52,6 @@ export class InputComponent implements OnInit {
   ngOnInit() {
     this.options = this.layoutNode.options;
     this.jsf.initializeControl(this);
-    console.log(this, 'InputComponent');
   }
 
   updateValue(event) {

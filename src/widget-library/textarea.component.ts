@@ -27,8 +27,8 @@ import { JsonSchemaFormService } from '../json-schema-form.service';
         [name]="controlName"
         [value]="controlValue"
         (input)="updateValue($event)"></textarea>
+        <error-messages-widget [control]="this"></error-messages-widget>
     </div>
-    <error-messages-widget [control]="this"></error-messages-widget>
   `,
 })
 export class TextareaComponent implements OnInit {

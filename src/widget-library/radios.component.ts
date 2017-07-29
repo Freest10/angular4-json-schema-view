@@ -6,14 +6,14 @@ import { ShareWidgetMethodsService }    from '../share/share-widgets-methods.ser
 @Component({
   selector: 'radios-widget',
   template: `
+    <div
+      [class]="options?.htmlClass">
     <label *ngIf="options?.title"
       [attr.for]="'control' + layoutNode?._id"
       [class]="options?.labelHtmlClass"
       [style.display]="options?.notitle ? 'none' : ''"
       [innerHTML]="options?.title"></label>
       <div [ngSwitch]="layoutOrientation">
-
-        <!-- 'horizontal' = radios-inline or radiobuttons -->
         <div *ngSwitchCase="'horizontal'"
           [class]="options?.htmlClass">
           <label *ngFor="let radioItem of selectList"
@@ -60,9 +60,9 @@ import { ShareWidgetMethodsService }    from '../share/share-widgets-methods.ser
             </label>
           </div>
         </div>
-
       </div>
       <error-messages-widget [control]="this"></error-messages-widget>
+    </div>
   `,
 })
 export class RadiosComponent implements OnInit {

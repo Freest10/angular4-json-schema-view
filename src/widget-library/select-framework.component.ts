@@ -48,7 +48,6 @@ export class SelectFrameworkComponent implements OnChanges, OnInit {
       if(!layout.hasOwnProperty("type") && this.jsf.hasOwnProperty("defaultWidget")){
         layout["type"]=this.jsf["defaultWidget"];
       }
-
       if(!this.componentRef){
         let component = this.getWidgetComponent(layout["type"]);
         let componentFactory = this.componentFactory.resolveComponentFactory(component);

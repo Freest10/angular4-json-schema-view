@@ -8,6 +8,7 @@ import { WidgetsService }                   from './widget-library/widgets.servi
 import { JsonSchemaShareOptionsService }    from './share/json-schema-share-options.service';
 import { RequestsDataService }              from './share/requests-data.service';
 
+
 @Component({
   selector: 'json-schema-view',
   template: `
@@ -16,37 +17,21 @@ import { RequestsDataService }              from './share/requests-data.service'
     </form>
   `,
   providers: [ JsonSchemaFormService, RequestsDataService ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class JsonSchemaViewComponent implements OnChanges, OnInit {
-  formID: number; // Unique ID for displayed form
-  debugOutput: any; // Debug information, if requested
-  formValueSubscription: any = null;
-  //jsfObject: any;
-
   // Recommended inputs
   @Input() schema: any; // The JSON Schema
-  @Input() layout: any[]; // The form layout
-  @Input() data: any; // The data model
   @Input() options: any; // The global form options
-  @Input() framework: string; // The framework to load
-  @Input() widgets: string; // Any custom widgets to load
-
   // Alternate combined single input
   @Input() form: any; // For testing, and JSON Schema Form API compatibility
-
   // Angular Schema Form API compatibility inputs
   @Input() model: any; // Alternate input for data model
-
-  @Input() formData: any; // Alternate input for data model
+  @Input() frameWorkName: any; // Alternate input for data model
 
   // Outputs
   @Output() onChanges = new EventEmitter<any>(); // Live unvalidated internal form data
   @Output() onSubmit = new EventEmitter<any>(); // Complete validated form data
-  @Output() isValid = new EventEmitter<boolean>(); // Is current data valid?
-  @Output() validationErrors = new EventEmitter<any>(); // Validation errors (if any)
-  @Output() formSchema = new EventEmitter<any>(); // Final schema used to create form
-  @Output() formLayout = new EventEmitter<any>(); // Final layout used to create form
   @Output() inctanceOfWidgets = new EventEmitter<any>();
   private formOfSchema: Object;
 
@@ -58,6 +43,7 @@ export class JsonSchemaViewComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     this.initializeForm();
+
   }
 
   ngAfterViewInit(){
@@ -65,7 +51,12 @@ export class JsonSchemaViewComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges() {
+    this.resetSchema();
     this.initializeForm();
+  }
+
+  resetSchema(){
+    this.jsf.resetFormGroup();
   }
 
   subscribeOnFormGroupValueChanges(){
@@ -75,7 +66,6 @@ export class JsonSchemaViewComponent implements OnChanges, OnInit {
         this.onChanges.emit(this.jsf.data);
       })
     }
-
   }
 
   getInctanceOfWidgets(){
@@ -84,12 +74,17 @@ export class JsonSchemaViewComponent implements OnChanges, OnInit {
 
   public initializeForm(): void {
 
-    this.setDefaltWidgetATJsf();
+    this.setDefaultWidgetATJsf();
     this.jsf.setWidgetLibrary(this.wdgts);
+
     this.jsf.setJsonSchemaShareOptions(this.schemaShareOptions.shareOptions);
 
     if(this.options){
       this.jsf.setSchemaOptions(this.options);
+    }
+
+    if(this.frameWorkName){
+      this.jsf.setSchemaOptions({"frameWorkName": this.frameWorkName});
     }
 
     if(this.model){
@@ -115,7 +110,7 @@ export class JsonSchemaViewComponent implements OnChanges, OnInit {
     this.jsf.setSchema(schema);
  }
 
-  setDefaltWidgetATJsf(){
+  setDefaultWidgetATJsf(){
     this.jsf.setDefaultWdget(this.wdgts.defaultWidget);
   }
 
@@ -125,8 +120,10 @@ export class JsonSchemaViewComponent implements OnChanges, OnInit {
   }
 
 
-  submitForm() {console.log(this.jsf.validData,"sbmit");
+  submitForm() {
     this.jsf.submitedForm();
-    this.onSubmit.emit(this.jsf.validData);
+    let validData = this.jsf.validData;
+    if(JSON.stringify(validData) == "{}") validData = null;
+    this.onSubmit.emit(validData);
   }
 }

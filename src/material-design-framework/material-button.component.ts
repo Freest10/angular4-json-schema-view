@@ -6,7 +6,7 @@ import { JsonSchemaFormService } from '../json-schema-form.service';
 @Component({
   selector: 'material-button-widget',
   template: `
-    <div class="button-row" [class]="options?.htmlClass">
+    <div [class]="options?.htmlClass">
       <button md-raised-button
         [attr.readonly]="options?.readonly ? 'readonly' : null"
         [disabled]="controlDisabled"
@@ -34,11 +34,9 @@ export class MaterialButtonComponent implements OnInit {
 
   ngOnInit() {
     this.options = this.layoutNode.options;
-    console.log(this, 'typeButton');
-    //this.jsf.initializeControl(this);
   }
 
-  clickOnButton(){ console.log(this, 'clickOnButton');
+  clickOnButton(){
     this.widgetSubject.next('buttonClick');
   }
 

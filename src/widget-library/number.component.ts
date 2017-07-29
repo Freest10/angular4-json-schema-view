@@ -30,8 +30,8 @@ import { ShareWidgetMethodsService }    from '../share/share-widgets-methods.ser
         (input)="updateValue($event)"
         (keydown)="validateInput($event)"
         >
-    </div>
-    <error-messages-widget [control]="this"></error-messages-widget>`,
+    <error-messages-widget [control]="this"></error-messages-widget>
+    </div>`,
 })
 export class NumberComponent implements OnInit {
   formControl: AbstractControl;
@@ -81,13 +81,10 @@ export class NumberComponent implements OnInit {
     } else if (this.allowNegative && event.key === '-' && val.indexOf('-') === -1) {
       return true;
     }
-    // TODO: Display feedback for rejected keystroke,
-    // and clear feedback on next valid keystroke
     return false;
   }
 
   validateNumber(event) {
-    // TODO: This only works for input type=text - make it work for type=number
     const val = event.target.value;
     if (!isNaN(val) || val === '' || val === ',' || val === '-' || val === '-.' ||
       (val.length > 1 && val.slice(-1).toLowerCase() === 'e') ||
@@ -95,7 +92,6 @@ export class NumberComponent implements OnInit {
     ) {
       this.lastValidNumber = val;
     } else {
-      // TODO: Display feedback for rejected key
       this.jsf.updateValue(this, this.lastValidNumber);
     }
   }
