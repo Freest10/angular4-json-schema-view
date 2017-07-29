@@ -24,5 +24,21 @@ export class AppModule { }
 ```
 
 ### Add to your component
+```
+import { Component, OnInit } from '@angular/core';
 
+@Component({
+  selector: 'app-root',
+  template: '
+       <json-schema-view
+       [form]='yourJsonSchema'
+       [model]='yourModel'
+       [frameWorkName]='yourFrameWorkName'
+       (inctanceOfWidgets)='yourIncstanceOfWidgetsFn($event)'
+       (onChanges)='yourChangeFn($event)'
+       (onSubmit)='yourOnSubmitFn($event)'
+       >
+  </json-schema-view>'
+})
+```
 
