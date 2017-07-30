@@ -3,40 +3,38 @@ import { AbstractControl } from '@angular/forms';
 import { JsonSchemaFormService } from '../json-schema-form.service';
 import { ShareWidgetMethodsService }    from '../share/share-widgets-methods.service';
 
-
 @Component({
-  selector: 'select-widget',
+  selector: 'material-select-widget',
   template: `
-    <div
-      [class]="options?.htmlClass">
-      <label *ngIf="options?.title"
-        [attr.for]="'control' + layoutNode?._id"
-        [class]="options?.labelHtmlClass"
-        [style.display]="options?.notitle ? 'none' : ''"
-        [innerHTML]="options?.title"></label>
-      <select
-        [id]="'control' + layoutNode?._id"
-        [attr.readonly]="options?.readonly ? 'readonly' : null"
-        [attr.required]="options?.required"
-        [class]="options?.fieldHtmlClass"
-        [disabled]="controlDisabled"
+    <section [style.width]="'100%'" [class]="options?.htmlClass || null">
+      <md-select #inputControl
+        [attr.name]="controlName"
         [(ngModel)]="(controlValue?.value) ? controlValue?.value : controlValue"
-        [name]="controlName"
+        [attr.readonly]="options?.readonly ? 'readonly' : null"
+        [disabled]="controlDisabled"
+        [floatPlaceholder]="options?.floatPlaceholder || (options?.notitle ? 'never' : 'auto')"
+        [id]="'control' + layoutNode?._id"
+        [placeholder]="options?.notitle ? options?.placeholder : options?.title"
+        [required]="options?.required"
+        [style.margin-top]="'4px'"
+        [style.width]="'100%'"
         (change)="updateValue($event)">
-        <option *ngFor="let selectItem of selectList"
-                     [value]="selectItem.value"
-        >{{selectItem.text}}</option>
-      </select>
-      <error-messages-widget [control]="this"></error-messages-widget>
-    </div>`,
+        <md-option *ngFor="let selectItem of selectList"
+          [value]="selectItem.value"
+          >{{selectItem.text}}</md-option>
+      </md-select>
+    </section>
+    <error-messages-widget [control]="this"></error-messages-widget>
+  `
 })
-export class SelectComponent implements OnInit {
+export class MaterialSelectComponent implements OnInit {
   formControl: AbstractControl;
   controlName: string;
-  controlValue: any;
+  controlValue: any = null;
   controlDisabled: boolean = false;
   options: any;
   selectList: any[] = [];
+  selectedValue: any = null;
   @Input() layoutNode: any;
 
   constructor(
@@ -51,7 +49,7 @@ export class SelectComponent implements OnInit {
   }
 
   updateValue(event) {
-    let value = event.target.value;
+    let value = event.value;
     if(this.layoutNode.valueType == "object"){
       let valueObject = null;
       if(value !== null) valueObject = this.getObjectByValueFromSelectList(value);

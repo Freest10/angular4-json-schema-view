@@ -38,6 +38,9 @@ export class MaterialButtonComponent implements OnInit {
 
   clickOnButton(){
     this.widgetSubject.next('buttonClick');
+    if(this.options.reset){
+      this.jsf.formGroup.reset();
+    }
   }
 
 }

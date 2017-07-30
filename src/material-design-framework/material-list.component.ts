@@ -15,13 +15,14 @@ import { RequestsDataService } from '../share/requests-data.service';
             (click)="selectData(list)"
           >
             <md-icon md-list-icon *ngIf="list.icon">{{list.icon}}</md-icon>
-            <p md-line> {{list.name}}</p>
+            <a md-line> {{list.name}}</a>
           </md-list-item>
         </md-list>
       <error-messages-widget [control]="this"></error-messages-widget>
       </ng-container>
     </div>
-  `
+  `,
+  styles: [`a{ cursor: pointer; }`]
 })
 export class MaterialListComponent implements OnInit {
   @Input() layoutNode: any;

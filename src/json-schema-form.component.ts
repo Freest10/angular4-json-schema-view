@@ -43,7 +43,6 @@ export class JsonSchemaViewComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     this.initializeForm();
-
   }
 
   ngAfterViewInit(){
@@ -53,6 +52,7 @@ export class JsonSchemaViewComponent implements OnChanges, OnInit {
   ngOnChanges() {
     this.resetSchema();
     this.initializeForm();
+    this.jsf.submitedForm(true);
   }
 
   resetSchema(){
