@@ -1,4 +1,4 @@
-# angular4-json-schema-view for web app
+# Angular4-json-schema-view for web app
 
 ![json-web-app-logo](https://user-images.githubusercontent.com/20557044/28751960-eabb6b82-751c-11e7-8939-9e45b98e0560.png)
 
