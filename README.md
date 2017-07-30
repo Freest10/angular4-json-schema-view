@@ -1,7 +1,5 @@
 # angular4-json-web-app
-<div style="margin:auto;">
 ![json-web-app-logo](https://user-images.githubusercontent.com/20557044/28751960-eabb6b82-751c-11e7-8939-9e45b98e0560.png)
-</div>
 There are two similar modules besides my. The detailed instruction of my module as well as the explanation of it will be produced soon.
 
 To install from NPM and use in your own project
