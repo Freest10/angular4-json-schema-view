@@ -10,7 +10,7 @@ npm install angular4-json-schema-view --save-dev
 ```
 
 ### Demo
-<a href="https://github.com/Freest10/demo-angular4-json-schema-view">demo angular4-json-web-app</a>
+<a href="https://github.com/Freest10/demo-angular4-json-schema-view">demo angular4-json-schema-view</a>
 
 ### Add to your module
 
