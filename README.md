@@ -1,5 +1,7 @@
 # angular4-json-schema-view
 
+There are two similar modules besides my. The detailed instruction of my module as well as the explanation of it will be produced soon.
+
 To install from NPM and use in your own project
 ```
 npm install angular4-json-schema-view --save-dev
@@ -44,6 +46,3 @@ import { Component, OnInit } from '@angular/core';
   </json-schema-view>`
 })
 ```
-
-There are two similar modules besides my. The detailed instruction of my module as well as the explanation of it will be produced soon.
-
