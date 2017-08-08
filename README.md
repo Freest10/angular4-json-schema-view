@@ -50,12 +50,12 @@ import { Component, OnInit } from '@angular/core';
 ```
 
 Json schema is not only a form generator, but also a frontend framework.
-It’s compatible with AngularJs and Angular2-json-schema-form.
+It’s compatible with <a href="http://schemaform.io/">AngularJs</a> and <a href="https://www.npmjs.com/package/angular2-json-schema-form">Angular2-json-schema-form</a>.
 
-This project was created to improve the lack of angular2-json-schema-form, which I encountered on a real project.
-To do this, I had to write my own Json schema, based on angular2-json-schema-form.
+This project was created to improve the lack of <a href="https://www.npmjs.com/package/angular2-json-schema-form">angular2-json-schema-form</a>, which I encountered on a real project.
+To do this, I had to write my own Json schema, based on <a href="https://www.npmjs.com/package/angular2-json-schema-form">angular2-json-schema-form</a>.
 
-Disadvantages of the angular2-json-schema-form, which I decided on in my project, are presented below:<br/>
+Disadvantages of the <a href="https://www.npmjs.com/package/angular2-json-schema-form">angular2-json-schema-form</a>, which I decided on in my project, are presented below:<br/>
 1. Problem: if you want to track the events of the widget, you need to specify them in the json schema.
 
 Example (problem):
@@ -74,33 +74,32 @@ Solution: we can receive instances of the created widgets and subscribe to event
 Example (decision):
 ```
 @Component({
-template: ’<json-schema-view
-  [form]="yourJsonSchema"
-  [model]="yourModel"
-  (onChange)="yourChangeFn($event)"
-  (instanceOfWidgets)="yourIncstanceOfWidgetsFn($event)"
-  (onSubmit)="yourOnSubmitFn($event)"
->
-</json-schema-view>’
+    template: `<json-schema-view
+                  [form]="yourJsonSchema"
+                  [model]="yourModel"
+                  (onChange)="yourChangeFn($event)"
+                  (instanceOfWidgets)="yourIncstanceOfWidgetsFn($event)"
+                  (onSubmit)="yourOnSubmitFn($event)"
+                >
+                </json-schema-view>’
 })
 export class AppComponent implements OnInit {
 	private inctanceOfWidgetsSchema: any;
 
 	yourIncstanceOfWidgetsFn(widgets){
 		this.inctanceOfWidgetsSchema = widgets;
-		      this.inctanceOfWidgetsSchema["send"].widgetSubject.subscribe(
-(type) => {
-if('buttonClick') this.fnClikc()
-}
-)
-
-//function which update list data find in list widget
-this.inctanceOfWidgetsSchema["tasks"].getSelectListByReqest(“/api/books”)
-}
-
-fnClikc(){
-//yourfunctionClikc
-}
+		    this.inctanceOfWidgetsSchema["send"].widgetSubject.subscribe(
+            (type) => {
+                if('buttonClick') this.fnClikc()
+            })
+        
+        //function which update list data find in list widget
+        this.inctanceOfWidgetsSchema["tasks"].getSelectListByReqest(“/api/books”)
+    }
+        
+    fnClikc(){
+    //yourfunctionClikc
+    }
 }
 ```
 
