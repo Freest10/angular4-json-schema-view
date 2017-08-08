@@ -106,7 +106,7 @@ export class AppComponent implements OnInit {
 ```
 
 2. You can pass value types of arrays and objects to the widgets.
-And the same widget can receive and return several types of values ​​of an array or object, it is enough to change only the type of the widget in "form"
+And the same widget can receive and return several types of values ​​of an array or object, it is enough to change only the type of the widget in "form".
 
 Example:
 ```
