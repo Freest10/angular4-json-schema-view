@@ -302,7 +302,7 @@ export class AppModule {
 
 }
 ```
-Setting json schema.
+###Setting json schema.
 
 Setting global settings.
 ```
@@ -337,25 +337,25 @@ export class AppModule {
 }
 ```
 Setting local settings.
-
-import { Component, OnInit } from '@angular/core';
 ```
+import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-root',
-  template: <json-schema-view 
-[frameWorkName]="frameWorkName" 
-[options]=”options”
-(inctanceOfWidgets)="inctanceOfWidgets($event)"></json-schema-view>
-'',
+  template: `<json-schema-view 
+    [frameWorkName]="frameWorkName" 
+    [options]=”options”
+    (inctanceOfWidgets)="inctanceOfWidgets($event)"></json-schema-view>
+  `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-// you can specify the name of the framework directly or through options
-frameWorkName = "material-design";
-//local settings for json schema
-options = {
-    "apiUrl": "api",
-    "frameWorkName": 'material-design'
-  }
+    // you can specify the name of the framework directly or through options
+    frameWorkName = "material-design";
+    //local settings for json schema
+    options = {
+        "apiUrl": "api",
+        "frameWorkName": 'material-design'
+    }
 }
 ```
