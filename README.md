@@ -230,7 +230,8 @@ I left only the required functionality in the json diagram, that were verified b
 
 If the widget written in the json schema is not correct, then by default the widget type will be “string”.
 
-Customizing
+### Customizing
+
 You can create your own widgets or redefine existing ones and connect them.
 
 Example of a custom widget:
