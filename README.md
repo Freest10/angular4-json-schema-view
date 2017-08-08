@@ -55,7 +55,7 @@ It’s compatible with AngularJs and Angular2-json-schema-form.
 This project was created to improve the lack of angular2-json-schema-form, which I encountered on a real project.
 To do this, I had to write my own Json schema, based on angular2-json-schema-form.
 
-Disadvantages of the angular2-json-schema-form, which I decided on in my project, are presented below:
+Disadvantages of the angular2-json-schema-form, which I decided on in my project, are presented below:<br/>
 1)Problem: if you want to track the events of the widget, you need to specify them in the json schema.
 
 Example:
