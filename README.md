@@ -302,7 +302,7 @@ export class AppModule {
 
 }
 ```
-###Setting json schema.
+### Setting json schema.
 
 Setting global settings.
 ```
