@@ -128,7 +128,7 @@ if “object” then out data is {“value:”...”, “text”:”...”}
 if “string” then out data is “...”
 
 You can create your own widgets with the types string, number, boolean, array and object as well as get the output of the corresponding types.
-show demo 
+<a href="https://github.com/Freest10/demo-angular4-json-schema-view">show demo</a> 
 
 3. Error processing.
 You can give each widget an error text message, if it is required, i.e. if there is an insufficient number of characters (minlength), the number of characters (maxlength) is exceeded or the value does not match the pattern.
@@ -171,7 +171,7 @@ Example:
   ]
 }
 ```
-show demo 
+<a href="https://github.com/Freest10/demo-angular4-json-schema-view">show demo</a> 
 
 4. If the data has been changed to null values, the Json schema will return the values ​​of these widgets as null, if the widget values ​​were not specified in the "model" and the widgets did not have a default value, then these widgets will not participate in the object when sending or changing the form.
 
