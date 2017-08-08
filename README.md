@@ -56,7 +56,7 @@ This project was created to improve the lack of angular2-json-schema-form, which
 To do this, I had to write my own Json schema, based on angular2-json-schema-form.
 
 Disadvantages of the angular2-json-schema-form, which I decided on in my project, are presented below:<br/>
-1)Problem: if you want to track the events of the widget, you need to specify them in the json schema.
+1. Problem: if you want to track the events of the widget, you need to specify them in the json schema.
 
 Example:
 
@@ -104,7 +104,7 @@ fnClikc(){
 }
 ```
 
-2) You can pass value types of arrays and objects to the widgets.
+2. You can pass value types of arrays and objects to the widgets.
 And the same widget can receive and return several types of values ​​of an array or object, it is enough to change only the type of the widget in "form"
 
 Example:
@@ -130,7 +130,7 @@ if “string” then out data is “...”
 You can create your own widgets with the types string, number, boolean, array and object as well as get the output of the corresponding types.
 show demo 
 
-3) Error processing.
+3. Error processing.
 You can give each widget an error text message, if it is required, i.e. if there is an insufficient number of characters (minlength), the number of characters (maxlength) is exceeded or the value does not match the pattern.
 You can also set styles to a block with errors by assigning it a class
 (errorClass: “myErrorClass”).
@@ -173,7 +173,7 @@ Example:
 ```
 show demo 
 
-4) If the data has been changed to null values, the Json schema will return the values ​​of these widgets as null, if the widget values ​​were not specified in the "model" and the widgets did not have a default value, then these widgets will not participate in the object when sending or changing the form.
+4. If the data has been changed to null values, the Json schema will return the values ​​of these widgets as null, if the widget values ​​were not specified in the "model" and the widgets did not have a default value, then these widgets will not participate in the object when sending or changing the form.
 
 Example:
 ```
