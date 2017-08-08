@@ -100,7 +100,7 @@ export class AppComponent implements OnInit {
     }
         
     fnClikc(){
-    //yourfunctionClikc
+        //yourfunctionClikc
     }
 }
 ```
