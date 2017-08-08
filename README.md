@@ -49,6 +49,8 @@ import { Component, OnInit } from '@angular/core';
 })
 ```
 
+### Description
+
 Json schema is not only a form generator, but also a frontend framework.
 It’s compatible with <a href="http://schemaform.io/">AngularJs</a> and <a href="https://www.npmjs.com/package/angular2-json-schema-form">Angular2-json-schema-form</a>.
 
