@@ -243,6 +243,7 @@ import { JsonSchemaFormService } from 'angular4-json-schema-view';
   selector: 'custom-input-widget',
   template: `
     <div>
+        <!-- Your code -->
     </div>
   `,
 })
