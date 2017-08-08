@@ -273,7 +273,7 @@ export class CustomInputComponent implements OnInit {
 }
 ```
 
-<h4>Connecting a Custom Widget</h4>
+Connecting a Custom Widget
 ```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -305,11 +305,9 @@ export class AppModule {
 
 }
 ```
-
 ### Setting json schema.
 
-<h4>Setting global settings</h4>
-
+Setting global settings.
 ```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -341,7 +339,7 @@ export class AppModule {
 
 }
 ```
-<h4>Setting local settings</h4>
+Setting local settings.
 ```
 import { Component, OnInit } from '@angular/core';
 
