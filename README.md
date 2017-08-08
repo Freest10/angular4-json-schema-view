@@ -273,7 +273,7 @@ export class CustomInputComponent implements OnInit {
 }
 ```
 
-Connecting a Custom Widget
+<h5>Connecting a Custom Widget</h5>
 ```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
