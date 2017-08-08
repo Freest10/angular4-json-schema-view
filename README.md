@@ -125,8 +125,8 @@ Example:
       }
     }
 ```
-if “object” then out data is {“value:”...”, “text”:”...”}
-if “string” then out data is “...”
+>if “object” then out data is {“value:”...”, “text”:”...”} <br/>
+>if “string” then out data is “...”
 
 You can create your own widgets with the types string, number, boolean, array and object as well as get the output of the corresponding types (<a href="https://github.com/Freest10/demo-angular4-json-schema-view">show demo</a>) 
 
