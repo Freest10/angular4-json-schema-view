@@ -58,7 +58,7 @@ To do this, I had to write my own Json schema, based on angular2-json-schema-for
 Disadvantages of the angular2-json-schema-form, which I decided on in my project, are presented below:<br/>
 1. Problem: if you want to track the events of the widget, you need to specify them in the json schema.
 
-Example:
+Example (problem):
 ```
 form:{
  sendMes:{
@@ -71,7 +71,7 @@ If we get json from the server, then we cannot pass to function.
 Solution: we can receive instances of the created widgets and subscribe to events or call the functions of the widget we need
 
 
-Example:
+Example (decision):
 ```
 @Component({
 template: ’<json-schema-view
