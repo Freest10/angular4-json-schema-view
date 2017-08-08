@@ -305,9 +305,11 @@ export class AppModule {
 
 }
 ```
+
 ### Setting json schema.
 
-Setting global settings.
+<h4>Setting global settings</h4>
+
 ```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -339,7 +341,7 @@ export class AppModule {
 
 }
 ```
-Setting local settings.
+<h4>Setting local settings</h4>
 ```
 import { Component, OnInit } from '@angular/core';
 
