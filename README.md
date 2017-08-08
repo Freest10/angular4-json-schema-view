@@ -59,14 +59,14 @@ Disadvantages of the angular2-json-schema-form, which I decided on in my project
 1. Problem: if you want to track the events of the widget, you need to specify them in the json schema.
 
 Example:
-
+```
 form:{
  sendMes:{
    type: “button”,
    onClick: function(){...}
  }
 }
-
+```
 If we get json from the server, then we cannot pass to function.
 Solution: we can receive instances of the created widgets and subscribe to events or call the functions of the widget we need
 
