@@ -51,7 +51,7 @@ import { Component, OnInit } from '@angular/core';
 
 ### Description
 
-Json-schema-view is not only a form generator, but also a view generator.
+Json-schema-view is not only a form generator, but also a simple way to create app by json.
 It’s compatible with <a href="http://schemaform.io/">AngularJs</a> and <a href="https://www.npmjs.com/package/angular2-json-schema-form">Angular2-json-schema-form</a>.
 
 This project was created to improve the lack of <a href="https://www.npmjs.com/package/angular2-json-schema-form">angular2-json-schema-form</a>, which I encountered on a real project.
