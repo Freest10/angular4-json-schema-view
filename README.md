@@ -181,12 +181,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: <json-schema-view
+  template: '<json-schema-view
   [form]="schema"
   [model]="model"
   (onSubmit)="submitFn($event)"
->
-'',
+>',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
