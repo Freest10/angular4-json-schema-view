@@ -189,7 +189,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-	schema = {
+form = {
   "schema": {
     "type": "object",
     "properties": {
@@ -216,11 +216,10 @@ model: any = {
 };
 submitFn(value){
 
- /* if we delete value in input in browser and click submit button your value must be
- {  "first_name": null }
-If there was no model, it would be value 
-*/
-console.log(value)
+ /* if we delete value in input in browser and click submit button your value must be {  "first_name": null }
+    If there was no model, it would be value {}
+ */
+ console.log(value)
 }
 }
 ```
